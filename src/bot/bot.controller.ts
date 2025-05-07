@@ -9,7 +9,7 @@ export class BotController {
   getBotList() {
     return this.botService.getBotList();
   }
-  @Get("bots")
+  @Get("searchBots")
   searchBots(@Query("search") search: string) {
     return this.botService.searchBots(search);
   }
