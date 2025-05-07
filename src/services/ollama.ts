@@ -9,7 +9,10 @@ const SYSTEM_PROMPT = `
 
   Use markdown formatting for better readability.
 
+
 ` as const;
+
+
 
 // Initialize Ollama client
 const ollamaClient = new Ollama({
