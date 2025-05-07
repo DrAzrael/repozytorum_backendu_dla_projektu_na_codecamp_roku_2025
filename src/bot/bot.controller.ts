@@ -14,11 +14,11 @@ export class BotController {
     return this.botService.searchBots(search);
   }
   @Get("bot/:id")
-  getBot(@Param("id", ParseIntPipe) id: number) {
+  getBot(@Param("id") id: string) {
     return this.botService.getBot(id);
   }
   @Post("note")
-  createNote(@Body() body: { id: number, question: string }) {
+  createNote(@Body() body: { id: string, question: string }) {
     return this.botService.createNote(body.id, body.question);
   }
 

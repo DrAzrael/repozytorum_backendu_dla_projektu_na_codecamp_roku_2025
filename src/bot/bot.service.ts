@@ -7,7 +7,7 @@ import Fuse from 'fuse.js';
 export class BotService {
   constructor(private prisma: PrismaService) { }
 
-  async createNote(id: number, question: string) {
+  async createNote(id: string, question: string) {
     const data = await this.prisma.bot.findUnique({
       where: { id: id }
     })
@@ -24,7 +24,7 @@ export class BotService {
     const noteReformat = note.messages[0].content.replace("\n", "\\n").split("</think>")[1]
     return noteReformat
   }
-  async getBot(id: number) {
+  async getBot(id: string) {
     const data = await this.prisma.bot.findUnique({
       where: {
         id: id,
