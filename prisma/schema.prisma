@@ -16,7 +16,9 @@ datasource db {
 model Bot {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   pfp_url     String
-  name        String   @unique
+  name        String @unique
   description String
   guidelines  String
+
+  @@map("bot_data")
 }
